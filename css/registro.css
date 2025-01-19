@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Familjen Grotesk", sans-serif;
+}
+
+body{
+    background: #F3F4F6;
+    height: 100%;
+    width: 100%; 
+}
+
+
+.container-register{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-register .form{
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    height: max-content;
+    background-color: #fff;
+    padding: 20px 20px 15px 20px;
+    border-radius: 10px;
+    box-shadow: 3px 1px 6px #c1c1c1;
+}
+
+
+.container-register .input-registro{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-register .cont-registro{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cont-registro label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.container-register .cont-registro input,
+.container-register .cont-registro select{
+    height: 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 2px solid #D1D5DB;
+    transition: border-color 0.3s;
+    margin-top: 5px;
+    transition: all .5s ease-in;
+}
+
+.container-register .cont-registro input:focus{
+    border-color: #6366F1;
+    outline: none;
+}
+
+.container-register .container-button{
+    display: flex;
+    justify-content: end;
+}
+
+.btnregistro{
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 500;
+    background-color: #374151;
+    cursor: pointer;
+}
