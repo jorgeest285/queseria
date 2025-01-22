@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once $_SERVER['DOCUMENT_ROOT'] . '/queseria/auth.php';
 // Incluir la configuración de la base de datos
 require_once $_SERVER['DOCUMENT_ROOT'] . '/queseria/conexion.php';
 // Consulta para obtener los productos de la tabla de quesos

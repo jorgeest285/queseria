@@ -70,6 +70,18 @@ session_start();
             </div>
         </div>
     </div>
+
+    <?php if (isset($_GET['logout']) && $_GET['logout'] === 'success'): ?>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Sesión cerrada',
+            text: 'Has cerrado sesión exitosamente.',
+            showConfirmButton: true
+        });
+    </script>
+<?php endif; ?>
+
 </body>
 
 </html>

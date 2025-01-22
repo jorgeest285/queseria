@@ -22,8 +22,8 @@ function getRandomColorAndText() {
         'text' => $textColor
     ];
 }
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Verificar si las variables POST necesarias existen
     if (isset($_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['password'], $_POST['confirm_password'], $_POST['genero'])) {
         $nombre = filter_var($_POST['nombre'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $apellido = filter_var($_POST['apellido'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -41,6 +41,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Verificar que las contraseñas coincidan
         if ($password !== $confirm_password) {
             echo json_encode(['success' => false, 'message' => 'Las contraseñas no coinciden']);
+            exit();
+        }
+
+        // Verificar si el correo ya existe
+        try {
+            $stmt = $pdo->prepare("SELECT COUNT(*) FROM usuarios WHERE email = :email");
+            $stmt->execute(['email' => $email]);
+            $emailExists = $stmt->fetchColumn();
+
+            if ($emailExists) {
+                echo json_encode(['success' => false, 'message' => 'El correo electrónico ya está registrado']);
+                exit();
+            }
+        } catch (PDOException $e) {
+            echo json_encode(['success' => false, 'message' => 'Error al verificar el correo: ' . $e->getMessage()]);
             exit();
         }
 
