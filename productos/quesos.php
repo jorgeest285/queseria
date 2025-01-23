@@ -25,7 +25,7 @@ $stmt = $pdo->query($sql);
     <div class="wrapper">
         <!-- Componente sidebar -->
         <?php include '../components/sidebar.php'; ?>
-
+        <?php include '../theme-toggle.php'; ?>
         <div class="main">
             <?php include '../components/navbar.php'; ?>
             <main class="content px-2 py-2">
@@ -119,6 +119,7 @@ $stmt = $pdo->query($sql);
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/acciones.js"></script>
+    <script src="../js/color-modes.js"></script>
     <script src="../assets/sweetalert2.min.js"></script>
     <!-- Jquery -->
     <script src="../js/jquery-3.6.0.min.js"></script>

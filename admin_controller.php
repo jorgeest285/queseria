@@ -22,6 +22,7 @@ require 'auth.php'
     <div class="wrapper">
         <!-- Componente sidebar -->
         <?php include 'components/sidebar.php'; ?>
+        <?php include 'theme-toggle.php'; ?>
 
         <div class="main">
             <?php include 'components/navbar.php'; ?>
@@ -95,6 +96,7 @@ require 'auth.php'
     <script src="js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Script para maneja de menú lateral y persistencia de modo claro / oscuro -->
     <script src="js/script.js"></script>
+    <script src="js/color-modes.js"></script>
     <!-- Jquery -->
     <script src="js/jquery-3.6.0.min.js"></script>
 
